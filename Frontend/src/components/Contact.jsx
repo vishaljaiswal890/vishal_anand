@@ -43,7 +43,6 @@ const Contact = () => {
     
     try {
       const response = await axios.post("/contact", formDetails);
-  
       if (response.status === 200) {
         setFormDetails(formInitialDetails);
         toast.success("Message sent successfully");
