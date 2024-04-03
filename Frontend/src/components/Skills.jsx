@@ -72,6 +72,18 @@ const Skills = () => {
                   <img src={meter3} alt="Image" />
                   <h5>Git</h5>
                 </div>
+                <div className="item">
+                  <img src={meter2} alt="Image" />
+                  <h5>Express.js</h5>
+                </div>
+                <div className="item">
+                  <img src={meter1} alt="Image" />
+                  <h5>Mongo DB</h5>
+                </div>
+                <div className="item">
+                  <img src={meter2} alt="Image" />
+                  <h5>Docker</h5>
+                </div>
               </Carousel>
             </div>
           </Col>

@@ -12,6 +12,7 @@ import "./Navbar.css";
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const [toggleClicked, setToggleClicked] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -29,16 +30,18 @@ const NavBar = () => {
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
   };
+
+  const handleToggleClick = () => {
+    setToggleClicked(!toggleClicked);
+  };
+
   return (
     <BrowserRouter>
       <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
         <Container>
           <Navbar.Brand href="#home">
-            {/* <img src={logo} alt="Logo" /> */}
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <span className="navbar-toggle-icon"></span>
-          </Navbar.Toggle>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggleClick} />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link
@@ -73,15 +76,12 @@ const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="https://www.linkedin.com/in/vishal-anand-41836916a/">
-                  <img src={navIcon1} />
+                <a href="https://www.linkedin.com/in/vishal-anand-41836916a/" target="_blank">
+                  <img src={navIcon1} alt="LinkedIn" />
                 </a>
-                <a href="https://github.com/vishaljaiswal890">
-                  <img src={git} />
+                <a href="https://github.com/vishaljaiswal890" target="_blank">
+                  <img src={git} alt="GitHub" />
                 </a>
-                {/* <a href="#">
-                  <img src={navIcon3} />
-                </a> */}
               </div>
               <HashLink to="#connect">
                 <button className="vvd">
