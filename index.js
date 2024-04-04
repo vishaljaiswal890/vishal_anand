@@ -24,6 +24,7 @@ var contactEmail = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS,
   }
 });
+
 // Verify transporter setup
 contactEmail.verify((error) => {
   if (error) {
